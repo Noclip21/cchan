@@ -8,14 +8,19 @@
 #include <strings.h>
 #include <string.h>
 
+
+#define STR(_string_) #_string_
+
+
 int main()
 {
     /* Some variables */
-    char error404[256] =
-        "HTTP/1.1 404\r\n"
-        "Connection: close\r\n\r\n"
-        "<html><head><title>404 not found</title></head>"
-        "<body><h1>404 not found</h1></body></html>\r\n\r\n";
+    char error404[256] = STR(
+HTTP/1.1 404\r\n
+Connection: close\r\n\r\n
+<html><head><title>404 not found</title></head>
+<body><h1>404 not found</h1></body></html>\r\n\r\n
+);
     /* Reading buffer */
     char buf[2000] = {0};
     /* Create our socket */
